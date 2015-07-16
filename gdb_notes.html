@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<link rel="stylesheet" href="stylesheets/contents.css">
+		<title>GDB Notes</title>
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<header algin="center">
+				<h1>GDB Notes</h1>
+			</header>
+			<section>
+                <h1>Installation</h1>
+                <ul>
+                    <li>Use home brew to do a fresh install</li>
+                    <li>Need to sign GDB a certificate to give it power to control other processes.</li>
+                    <li><a href="http://sourceware.org/gdb/wiki/BuildingOnDarwin">BuildingOnDarwin - GDB Wiki</a>
+                    </li>
+                </ul>
+				<h1>Basic Commands</h1>
+			</section>
+		</div>
+	</body>
+	<footer>
+		<p>Last Update:<i id="lastmodified"></i></p>
+		<script>
+var isOpera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+var isFirefox = typeof InstallTrigger !== 'undefined';
+var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
+var isChrome = !!window.chrome && !isOpera;
+
+var lm_time = new Date(document.lastModified);
+
+if (isSafari)
+	lm_time.setHours(lm_time.getHours() + 8);
+	document.getElementById("lastmodified").innerHTML = lm_time;
+		</script>
+	</footer>
+
+</html>

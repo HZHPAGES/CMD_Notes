@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="stylesheets/contents.css">
+        <title>Cmake Notes</title>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <header algin="center">
+                <h1>Cmake Notes</h1>
+            </header>
+            <section>
+                <h1>Some Misunderstandings</h1>
+                <ul>
+                    <li>the <code>STATUS</code> keyword need to be capitalized within <code>message</code></li>
+                    <li>Normally in cmake, we need to use ${var} to get the value of var, but in if statement, the bare var shall be used directly.</li>
+                    <li>For instructions, it doesn't matter whether the capitalized or the normal letter is used, but it does matter in var names and parameters.</li>
+                </ul>
+            </section>
+            <section>
+                <h1>New knowledge</h1>
+                <ul>
+                    <li><code>${projectname_BINARY_DIR} ${projectname_SOURCE_DIR}</code>stores the path of the build dir and source dir respectively</li>
+                    <li>
+                        Project
+                        <ul>
+                            <li><code>project(project_name [CXX] [C] [Java])</code></li>
+                            <li>note project doesn't need to be capitalized but <code>[CXX] [C] [Java] have to be exactly the same since these are the hard coded environment names</code></li>
+                            <li>this instruction implicitly defined two path macro, the path of the source folder and the path of the binary folder</li>
+                            <li><code>PROJECT_BINARY_DIR PROJECT_SOURCE_DIR</code> are also available after that instruction</li>
+                        </ul>
+                    </li>
+                    <li>
+                        set
+                        <ul>
+                            <li><code>set(Var [value])</code></li>
+                            <li>doesn't need to be capitalized</li>
+                        </ul>
+                    </li>
+                    <li>
+                        message
+                        <ul>
+                            <li><code>MESSAGE([SEND_ERROR | STATUS | FATAL_ERROR] "message to display")</code></li>
+                            <li>so you now you know why we need "STATUS" to be capitalized</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        add_subdirectory
+                        <ul>
+                            <li><code>ADD_SUBDIRECTORY(source_dir [binary_dir] [EXCLUDE_FROM_ALL])</code></li>
+                            <li>the binary folder will be created within in current build directory. Otherwise the binary file will be stored in build/source_dir</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Manually set the output path of the binary files
+                        <ul>
+                            <li><code>SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)</code></li>
+                            <li><code>SET(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)</code></li>
+                            <li>Pay attention to the macros' name</li>
+                        </ul>
+                    </li>
+                    <li>
+                        install : to put files wherever you want :)
+                        <ul>
+                            <li><code>install([TARGETS | FILES | PROGRAMS | DIRECTORY] files DESTINATION dir )</code></li>
+                            <li>note target is the complied binary files, files are normal files, programs are scripts. And for all those file, you can set the permission after installation. Check the man page</li>
+                            <li>For directory, when typing the path, end with or without a black slash makes a difference, check the manual.(with the slash means install the content, and without the slash means install the entire directory)</li>
+                            <li>note the default value of <code>CMAKE_INSTALL_PREFIX </code> is <code>/usr/local</code></li>
+                        </ul>
+                    </li>
+                    <li>
+                        add_library()
+                        <ul>
+                            <li><code>add_library(libname [SHARED | STATIC | MODULE] sources)</code></li>
+                        </ul>
+                    </li>
+                    <li>
+                        set_target_properties
+                        <ul>
+                            <li><code>set_target_properties(target1 target2 .. PROPERTIES prop1 value1 prop2 value2 ...)</code></li>
+                            <li>we can use it to change the output file name: <code>SET_TARGET_PROPERTIES(hello_static PROPERTIES OUTPUT_NAME "hello")</code></li>
+                            <li>And on contrast, we have a function to get the target property <code>GET_TARGET_PROPERTY(VAR target property)</code></li>
+                        </ul>
+                    </li>
+                    <li>
+                        include_directories()
+                        <ul>
+                            <li>this function helps to include the header files path</li>
+                            <li><code>INCLUDE_DIRECTORIES([AFTER|BEFORE] [SYSTEM] dir1 dir2 ...)</code></li>
+                            <li>the before and after means where do you want to put the new path, before the default path or after the default path</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </body>
+    <footer>
+        <p>Last Update:<i id="lastmodified"></i></p>
+        <script>
+var isOpera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+var isFirefox = typeof InstallTrigger !== 'undefined';
+var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
+var isChrome = !!window.chrome && !isOpera;
+
+var lm_time = new Date(document.lastModified);
+
+if (isSafari)
+    lm_time.setHours(lm_time.getHours() + 8);
+    document.getElementById("lastmodified").innerHTML = lm_time;
+        </script>
+    </footer>
+
+</html>

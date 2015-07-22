@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="stylesheets/contents.css">
+        <title>CPP Notes</title>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <header algin="center">
+                <h1>CPP Notes</h1>
+            </header>
+            <section>
+                <h1>Tools</h1>
+                <ul>
+                    <li>Generate Documentation : use doxygen</li>
+                    <ul>
+                        <li><code>doxygen -g doc.config</code></li>
+                        <li>Then edit the doc.config file</li>
+                        <li><code>doxygen doc.config</code></li>
+                    </ul>
+                </ul>
+            </section>
+        </div>
+    </body>
+    <footer>
+        <p>Last Update:<i id="lastmodified"></i></p>
+        <script>
+var isOpera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+var isFirefox = typeof InstallTrigger !== 'undefined';
+var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
+var isChrome = !!window.chrome && !isOpera;
+
+var lm_time = new Date(document.lastModified);
+
+if (isSafari)
+    lm_time.setHours(lm_time.getHours() + 8);
+    document.getElementById("lastmodified").innerHTML = lm_time;
+        </script>
+    </footer>
+
+</html>

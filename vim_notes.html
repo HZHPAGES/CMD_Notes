@@ -15,7 +15,7 @@
             </header>
             <section>
                 <ul>
-                    <li>Generate tags for the help docs: 
+                    <li>Generate tags for the help docs:
                         <ul>
                             <li>Default vim utility<code>:helpt path_to_doc_folder</code></li>
                             <li>Provided by Pathogen<code>:Helptags</code></li>
@@ -40,6 +40,32 @@
                         List all the settings that are different from the default value: <code>:set</code><br>
                         Check where is a variable last set: <code>:verbose set var ?</code><br>
                         List all the scripts that the vim has sourced: <code>:scriptnames</code>
+                    </li>
+                    <li>
+                        Some path related macros:
+                        <ul>
+                            <li><code>echo @%</code></li>
+                            <li><code>echo @#</code></li>
+                            <li><code>pwd</code></li>
+                        </ul>
+                    </li>
+                    <li>
+                        the difference between let and set
+                        <ul>
+                            <li>"let" is to set the value of a variable while "set" is to set the value of a option</li>
+                            <li>an option can be transfered to a variable by adding a &, so "let" can assign value to &option. But "set" has no way to set the value of a variable.</li>
+                            <li>some boolean options can only be set by "set", because they don't take any values. eg: <code>set number</code></li>
+                            <li><code>set option&</code> : to restore the default value of an option</li>
+                            <li><code>set option!</code> : to unset a boolean option</li>
+                        </ul>
+                    </li>
+                    <li>
+                        try to write to some read only file
+                        <ul>
+                            <li><code>!sudo tee % \gt/dev/null</code> will definitely do the job.</li>
+                            <li>but after trying a while, I found <code>!sudo cat \gt %</code> won't do the job. This is because "cat" just write to the stdout, and you were using a bash operator <code>\gt</code> to put it to a file, and of course if you wrote in that way the sudo won't be able to cover the trailing bash operator.</li>
+                            <li>the solution to this is to reform <code>sudo</code>. Instead of the previous version, we should use : <code>!sudo -s "cat \gt %"</code> and -s means sudo will use a shell to run the entire expression</li>
+                        </ul>
                     </li>
                 </ul>
             </section>

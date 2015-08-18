@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="stylesheets/contents.css">
+        <title>Photo Constants</title>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <header algin="center">
+                <h1>Photo Constants</h1>
+            </header>
+            <section>
+                <h1>1 Inch Photo Constants</h1>
+                <ul>
+                    <li>for one inch photo, if we use 5 x 3.5 size photo, then
+                    the canvas for the single unit is gonna be 2.95 times 4.3</li>
+                    <li>
+                        <h2>6 x 4 photo</h2>
+                        <ul>
+                            <li>photo size : 2.5 cm x 3.5cm</li>
+                            <li>boundary : 0.05cm gray</li>
+                            <li>height : 0.3cm white</li>
+                            <li>mother board : portrait</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h1>2 Inch Photo Constants</h1>
+                <ul>
+                    <li>
+                        <h2>6 x 4 photo</h2>
+                        <ul>
+                            <li>photo size : 3.75 cm x 5.05 cm</li>
+                            <li>boundary : 0.05 cm gray</li>
+                            <li>mother board : landscape</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2>5 x 3 photo</h2>
+                        untested yet
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h1>German Visa</h2>
+                <ul>
+                    <li>
+                        <h2>6 x 4 photo</h2>
+                        <ul>
+                            <li>photo size : 3.5cm x 4.5 cm </li>
+                            <li>face : 32mm - 36mm</li>
+                            <li>boundary : 0.05cm gray </li>
+                            <li>height : 0.5 cm</li>
+                            <li>width : 0.28cm</li>
+                            <li>mother board : landscape</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h1>USA Visa</h1>
+                <ul>
+                    <li>
+                        <h2>6 x 4 photo</h2>
+                        <ul>
+                            <li>photo size : 5cm x 5 cm</li>
+                            <li>face : 25mm - 35mm</li>
+                            <li>boundary : 0.05 cm gray</li>
+                            <li>width : 0.02 cm white</li>
+                            <li>mother board : landscape</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </body>
+    <footer>
+        <p>Last Update:<i id="lastmodified"></i></p>
+        <script>
+var isOpera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+var isFirefox = typeof InstallTrigger !== 'undefined';
+var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
+var isChrome = !!window.chrome && !isOpera;
+
+var lm_time = new Date(document.lastModified);
+
+if (isSafari)
+    lm_time.setHours(lm_time.getHours() + 8);
+    document.getElementById("lastmodified").innerHTML = lm_time;
+        </script>
+    </footer>
+
+</html>

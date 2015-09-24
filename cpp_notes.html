@@ -34,6 +34,39 @@
                             <li> and note <code>const char *</code> and <code>char const *</code> are the same, so you cannot change the value but you can change the pointer</li>
                         </ul>
                     </li>
+                    <li>
+                        Static member in a class :
+                        <ul>
+                            <li>
+                                We can define class members static using static keyword.
+                                When we declare a member of a class as static it means no matter how many objects of the class are created,
+                                there is only one copy of the static member.
+                            </li>
+                            <li>
+                                <p>
+                                    Static variables in the context of a class are shared between all instances of a class.
+                                </p>
+                                <p>
+                                    In a function, it remains a persistent variable, so you could for instance count the number of times a function has been called.
+                                </p>
+                                <p>
+                                    When used outside of a function or class, it ensures the variable can only be used by code in that specific file, and nowhere else.
+                                </p>
+                                <p>
+                                    Constant variables however are prevented from changing. A common use of const and static together is within a class definition to provide some sort of constant.
+                                </p>
+                            </li>
+                            <li>
+                                <strong>
+                                    so whenever you want to declare some constant values in a class as a member, use static!!!!
+                                </strong>
+                                <p>
+                                eg:
+                                    <code>static const a = 1;</code>
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
         </div>

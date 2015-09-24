@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="stylesheets/contents.css">
+        <title>GCC Notes</title>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <header algin="center">
+                <h1>GCC Notes</h1>
+            </header>
+            <section>
+                <ul>
+                    <li>
+                        Installation <br>
+                        <ul>
+                            <li><code>cd /path/to/gcc/src/</code></li>
+                            <li><code>./contrib/download_prerequisites</code></li>
+                            <li><code>cd ..</code></li>
+                            <li><code>mcd gccobj</code></li>
+                            <li><code>./../gcc_src/cofigure --prefix=$HOME</code></li>
+                            <li><code>make</code></li>
+                            <li><code>make install</code></li>
+                        </ul>
+                    </li>
+                    <li>
+                        Configuration Reference : <a href="https://gcc.gnu.org/install/configure.html">Installing GCC: Configuration - GNU Project - Free Software Foundation (FSF)</a>
+                    </li>
+                    <li>
+                        Interesting Configuration:
+                        <ul>
+                            <li><code>--with-pkgversion=version</code> to replace the "GCC" part in the parentheses of <code>gcc --version</code> </li>
+                            <li><code>--prefix=dirname</code> Specify the toplevel installation directory</li>
+                            <li><code>--enable-languages=lang1,lang2,...</code></li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </body>
+    <footer>
+        <p>Last Update:<i id="lastmodified"></i></p>
+        <script>
+var isOpera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+var isFirefox = typeof InstallTrigger !== 'undefined';
+var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
+var isChrome = !!window.chrome && !isOpera;
+
+var lm_time = new Date(document.lastModified);
+
+if (isSafari)
+    lm_time.setHours(lm_time.getHours() + 8);
+    document.getElementById("lastmodified").innerHTML = lm_time;
+        </script>
+    </footer>
+
+</html>

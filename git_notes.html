@@ -1,51 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-		<link rel="stylesheet" href="stylesheets/contents.css">
-		<title>Git Command Notes</title>
-	</head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="stylesheets/contents.css">
+        <title>Git Command Notes</title>
+    </head>
 
-	<body>
-		<div class="wrapper">
-			<header algin="center">
-				<h1>Git Command Notes</h1>
-			</header>
-			<section>
+    <body>
+        <div class="wrapper">
+            <header algin="center">
+                <h1>Git Command Notes</h1>
+            </header>
+            <section>
 
-				<ul>
-					<li>Delete the last commit locally and remotely:
-						<ul>
-							<li><code>git reset HEAD^</code></li>
-							<li><code>git push origin +HEAD # force push the new HEAD commit</code></li>
-						</ul>
-					</li>
-					<li>Delete the last commit only remotely:
-						<ul>
-							<li><code>git push origin +HEAD^:master</code></li>
-						</ul>
-					</li>
-					<li>git log enhancement:
-						<ul>
-							<li>show the difference between commits :<code>git log -p</code></li>
-							<li>show the n most recent commits : <code>git log -n</code></li>
-							<li>word difference (for books or papers) : <code>git log -U1 --word-diff</code></li>
-						</ul>
-					</li>
+                <ul>
+                    <li>Delete the last commit locally and remotely:
+                        <ul>
+                            <li><code>git reset HEAD^</code></li>
+                            <li><code>git push origin +HEAD # force push the new HEAD commit</code></li>
+                        </ul>
+                    </li>
+                    <li>Delete the last commit only remotely:
+                        <ul>
+                            <li><code>git push origin +HEAD^:master</code></li>
+                        </ul>
+                    </li>
+                    <li>git log enhancement:
+                        <ul>
+                            <li>show the difference between commits :<code>git log -p</code></li>
+                            <li>show the n most recent commits : <code>git log -n</code></li>
+                            <li>word difference (for books or papers) : <code>git log -U1 --word-diff</code></li>
+                        </ul>
+                    </li>
                     <li>Set the default remote repo:
                         <ul>
                             <li>Edit .git/config. Build an entry :<br><code>[branch "master"] <br>remote = origin <br> merge = refs/heads/master</code></li>
                         </ul>
                     </li>
-				</ul>
-			</section>
-		</div>
-	</body>
-	<footer>
-		<p>Last Update:<i id="lastmodified"></i></p>
-		<script>
+                    <li>Fast create and switch to a new branch : <code>git checkout -b </code></li>
+                </ul>
+            </section>
+        </div>
+    </body>
+    <footer>
+        <p>Last Update:<i id="lastmodified"></i></p>
+        <script>
 var isOpera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
 var isFirefox = typeof InstallTrigger !== 'undefined';
 var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
@@ -54,9 +55,9 @@ var isChrome = !!window.chrome && !isOpera;
 var lm_time = new Date(document.lastModified);
 
 if (isSafari)
-	lm_time.setHours(lm_time.getHours() + 8);
-	document.getElementById("lastmodified").innerHTML = lm_time;
-		</script>
-	</footer>
+    lm_time.setHours(lm_time.getHours() + 8);
+    document.getElementById("lastmodified").innerHTML = lm_time;
+        </script>
+    </footer>
 
 </html>

@@ -49,6 +49,22 @@
                     </li>
                     <li>To check the information of a tracking branch : git branch -vv</li>
                     <li>use the git-shell on the git account of the git server if you want to restrict the verified users from shell onto the server</li>
+                    <li>Remove files from git:
+                        <br>
+                            <code>
+                                git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch PATH-TO-YOUR-FILE-WITH-SENSITIVE-DATA' --prune-empty --tag-name-filter cat -- --all
+                            </code>
+                    </li>
+                    <li>Remove dangling objects from git database:
+                        <ul>
+                            <li><code>
+                                git reflog expire --expire=now --all
+                            </code></li>
+                            <li><code>
+                                git gc --prune=now
+                            </code></li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
         </div>

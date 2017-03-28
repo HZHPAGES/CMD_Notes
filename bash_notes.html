@@ -251,6 +251,8 @@
                     <li>About the parameter substitution in bash script : <a href="http://tldp.org/LDP/abs/html/parameter-substitution.html#PARAMSUBREF">check here</a></li>
                     <li>To disable a user from login with password : <code>sudo passwd -l username</code> -l means lock. After this the user can only be accessed either with ssh_key or <code>sudo su username</code></li>
                     <li>The access mode of .ssh folder shall be 700 for it to be functional</li>
+                    <li>To unmount a disk: <code>umount path-to-mount-point or /dev/sdx </code></li>
+                    <li>To force unmount a disk: <code>fuser -km path-to-mount-point</code> This will help to kill the processes currently using the mounted disk</li>
                 </ul>
             </section>
         </div>

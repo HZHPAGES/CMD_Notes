@@ -253,6 +253,14 @@
                     <li>The access mode of .ssh folder shall be 700 for it to be functional</li>
                     <li>To unmount a disk: <code>umount path-to-mount-point or /dev/sdx </code></li>
                     <li>To force unmount a disk: <code>fuser -km path-to-mount-point</code> This will help to kill the processes currently using the mounted disk</li>
+                    <li>Parentheses:
+                        <br>
+                        <ul>
+                            <li><code>[]</code> and <code>[[]]</code>: Typical tests are whether a file exists or one number is equal to another.</li>
+                            <li><code>(())</code>: Performs arithmetic. Exit code zero(true) if the result is non-zero, but exits non-zero(false) if result is zero.</li>
+                            <li><code>()</code>: Run command in a sub shell</li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
         </div>
